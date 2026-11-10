@@ -1,0 +1,33 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.venv-*/
+venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Secrets and machine-specific configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local task workspaces, logs, and artifacts
+.repopilot/
+artifacts/
+*.log
+
+# Editors and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

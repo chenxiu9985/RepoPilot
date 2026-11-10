@@ -1,0 +1,32 @@
+name: Development task
+description: 一个可以独立实现和验收的任务
+title: "[Task] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: 目标与范围
+      description: 解决什么问题？本次包含什么？
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收标准
+      description: 写出可以客观验证的行为和必要错误场景。
+      placeholder: "- [ ] ..."
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: 验证方式
+      description: 测试、演示命令或人工检查方式。
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: 依赖与设计说明
+      description: 关联任务、待确定的取舍和外部依赖。

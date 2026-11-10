@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling>=1.26,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "repopilot"
+version = "0.1.0.dev0"
+description = "A repository-aware coding agent for reproducible Python issue repair."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "chenxiu9985" }]
+dependencies = [
+    "pydantic>=2.9,<3",
+    "pydantic-settings>=2.6,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "build>=1.2,<2",
+    "pytest>=8.3,<10",
+    "ruff>=0.8,<1",
+]
+
+[project.scripts]
+repopilot = "repopilot.cli:main"
+
+[project.urls]
+Repository = "https://github.com/chenxiu9985/RepoPilot"
+Issues = "https://github.com/chenxiu9985/RepoPilot/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/repopilot"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "docs", "examples", "README.md", "CONTRIBUTING.md", "LICENSE", "pyproject.toml", "requirements-dev.lock", ".env.example"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-config --strict-markers"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
